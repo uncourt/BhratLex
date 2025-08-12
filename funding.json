@@ -1,0 +1,53 @@
+{
+  "$schema": "https://floss.fund/schemas/funding.json",
+  "name": "Uncourt",
+  "description": "A foundational open-source language model, Uncourt, specialized in Indian law to democratize access to legal information. It serves as critical public infrastructure for future legal-tech innovation in India.",
+  "license": "Apache-2.0",
+  "keywords": [
+    "llm",
+    "ai",
+    "legal-tech",
+    "india",
+    "open-source",
+    "nlp",
+    "justice-tech"
+  ],
+  "repository": "https://github.com/uncourt/BhratLex",
+  "website": "https://uncourt.ai",
+  "contact": {
+    "email": "contact@uncourt.ai"
+  },
+  "funding": {
+    "goal": "To cover the absolute essential operational costs to ensure the Uncourt project remains active and can be continuously improved. This lean budget prioritizes core technical needs.",
+    "grant_suggestion": {
+      "amount": 10000,
+      "currency": "USD"
+    },
+    "breakdown": [
+      {
+        "item": "GPU Compute Time",
+        "description": "Covers essential costs for fine-tuning experiments and model updates on budget-friendly cloud GPU services.",
+        "cost": {
+          "amount": 5000,
+          "currency": "USD"
+        }
+      },
+      {
+        "item": "Data Storage & Hosting",
+        "description": "Covers basic cloud storage for the dataset and bandwidth for hosting model weights for public download.",
+        "cost": {
+          "amount": 3000,
+          "currency": "USD"
+        }
+      },
+      {
+        "item": "Project Maintenance",
+        "description": "Covers essential costs like domain name renewals and core software licenses.",
+        "cost": {
+          "amount": 2000,
+          "currency": "USD"
+        }
+      }
+    ]
+  }
+}
