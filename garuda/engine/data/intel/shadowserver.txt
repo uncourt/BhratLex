@@ -1,0 +1,2 @@
+# sample shadowserver domains
+malware-host.org

@@ -1,0 +1,2 @@
+# sample spamhaus drop
+bad-ip.example
