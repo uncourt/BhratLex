@@ -1,0 +1,53 @@
+{
+  "weights": {
+    "length": 0.1,
+    "entropy": 0.3,
+    "consonant_ratio": 0.05,
+    "vowel_ratio": -0.05,
+    "digit_ratio": 0.2,
+    "special_char_ratio": 0.4,
+    "consecutive_consonants": 0.15,
+    "consecutive_vowels": -0.1,
+    "consecutive_digits": 0.25,
+    "consecutive_special_chars": 0.35,
+    "idn_homoglyph_score": 0.8,
+    "typosquatting_score": 0.7,
+    "dga_entropy": 0.6,
+    "nrd_flag": 0.4,
+    "dynamic_dns_flag": 0.5,
+    "parked_domain_flag": 0.3,
+    "cname_cloaking_flag": 0.6,
+    "dns_rebinding_flag": 0.7,
+    "cryptojacking_flag": 0.65
+  },
+  "bias": -2.0,
+  "version": "v1.0.0",
+  "training_samples": 0,
+  "feature_names": [
+    "length",
+    "entropy",
+    "consonant_ratio",
+    "vowel_ratio",
+    "digit_ratio",
+    "special_char_ratio",
+    "consecutive_consonants",
+    "consecutive_vowels",
+    "consecutive_digits",
+    "consecutive_special_chars",
+    "idn_homoglyph_score",
+    "typosquatting_score",
+    "dga_entropy",
+    "nrd_flag",
+    "dynamic_dns_flag",
+    "parked_domain_flag",
+    "cname_cloaking_flag",
+    "dns_rebinding_flag",
+    "cryptojacking_flag"
+  ],
+  "model_type": "logistic_regression",
+  "training_date": "2024-01-01T00:00:00",
+  "performance_metrics": {
+    "accuracy": 0.85,
+    "roc_auc": 0.92
+  }
+}
