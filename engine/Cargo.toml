@@ -1,0 +1,31 @@
+[package]
+name = "garuda-engine"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.0", features = ["v4", "serde"] }
+redis = { version = "0.23", features = ["tokio-comp", "connection-manager"] }
+clickhouse = { version = "0.12", features = ["tokio"] }
+nalgebra = "0.32"
+publicsuffix = "2.2"
+idna = "0.5"
+strsim = "0.10"
+entropy = "0.3"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "1.0"
+anyhow = "1.0"
+futures = "0.3"
+async-trait = "0.1"
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+http = "0.2"
+tracing-opentelemetry = "0.23"
+opentelemetry = { version = "0.23", features = ["rt-tokio"] }
+opentelemetry-jaeger = "0.23"
