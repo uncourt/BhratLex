@@ -1,0 +1,38 @@
+[package]
+name = "garuda-engine"
+version = "0.1.0"
+edition = "2021"
+authors = ["Garuda Team"]
+
+[dependencies]
+axum = { version = "0.7", features = ["json"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+thiserror = "1"
+anyhow = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+publicsuffix = "2"
+idna = "0.5"
+strsim = "0.11"
+regex = "1"
+url = "2"
+base64 = "0.22"
+hdrhistogram = "7"
+parking_lot = "0.12"
+dashmap = "5"
+moka = { version = "0.12", features = ["future"] }
+rand = "0.8"
+nalgebra = { version = "0.32", features = ["serde-serialize"] }
+redis = { version = "0.24", features = ["tokio-comp", "aio", "connection-manager", "json"] }
+clickhouse = { version = "0.12", features = ["tokio", "tls"] }
+bytes = "1"
+hyper = { version = "1", features = ["client", "http1"] }
+reqwest = { version = "0.12", features = ["json", "rustls-tls"] }
+hickory-resolver = { version = "0.24", features = ["tokio-runtime"] }
+chrono = { version = "0.4", features = ["serde"] }
+futures = "0.3"
+statrs = "0.16"
+bincode = "1"

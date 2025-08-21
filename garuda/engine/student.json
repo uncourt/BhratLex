@@ -1,0 +1,31 @@
+{
+  "intercept": -2.0,
+  "weights": [
+    0.01,
+    0.05,
+    0.04,
+    0.6,
+    1.2,
+    1.0,
+    0.7,
+    0.5,
+    0.4,
+    0.6,
+    0.6,
+    0.8
+  ],
+  "feature_order": [
+    "len_domain",
+    "num_dashes",
+    "num_digits",
+    "entropy",
+    "idn_homoglyph",
+    "typosquat_score",
+    "nrd",
+    "dynamic_dns",
+    "parked",
+    "cname_cloaking",
+    "dns_rebinding",
+    "coinblocklist_hit"
+  ]
+}

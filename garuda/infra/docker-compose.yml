@@ -1,0 +1,40 @@
+version: '3.9'
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.7
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    healthcheck:
+      test: wget -qO- http://localhost:8123/ping || exit 1
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    volumes:
+      - ./clickhouse_schema.sql:/docker-entrypoint-initdb.d/clickhouse_schema.sql:ro
+
+  clickhouse-init:
+    image: clickhouse/clickhouse-client:24.7
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "/scripts/init-clickhouse.sh"]
+    volumes:
+      - ./init-clickhouse.sh:/scripts/init-clickhouse.sh:ro
+      - ./clickhouse_schema.sql:/scripts/clickhouse_schema.sql:ro
+    environment:
+      CLICKHOUSE_HOST: clickhouse
+      CLICKHOUSE_PORT: 9000
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: ""
+    restart: "no"
