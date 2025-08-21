@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: garuda-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:23.8
+    container_name: garuda-clickhouse
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./clickhouse_schema.sql:/docker-entrypoint-initdb.d/clickhouse_schema.sql
+    environment:
+      - CLICKHOUSE_DB=garuda
+      - CLICKHOUSE_USER=default
+      - CLICKHOUSE_PASSWORD=
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  clickhouse_data:
