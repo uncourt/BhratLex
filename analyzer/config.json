@@ -1,0 +1,28 @@
+{
+  "vlm_endpoint": "http://localhost:8001/v1/chat/completions",
+  "vlm_api_key": "dummy",
+  "browser_timeout": 30,
+  "max_workers": 4,
+  "screenshot_dir": "./screenshots",
+  "redis": {
+    "url": "redis://localhost:6379",
+    "queue_name": "analyzer_queue"
+  },
+  "clickhouse": {
+    "host": "localhost",
+    "port": 8123,
+    "database": "garuda",
+    "username": "default",
+    "password": ""
+  },
+  "ocr": {
+    "use_gpu": false,
+    "lang": "en"
+  },
+  "browser": {
+    "headless": true,
+    "viewport_width": 1920,
+    "viewport_height": 1080,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  }
+}

@@ -1,0 +1,55 @@
+[server]
+host = "0.0.0.0"
+port = 8000
+workers = 4
+
+[thresholds]
+block_threshold = 0.8
+warn_threshold = 0.5
+uncertainty_threshold = 0.3
+
+[redis]
+url = "redis://localhost:6379"
+queue_name = "analyzer_queue"
+max_connections = 10
+
+[clickhouse]
+url = "http://localhost:8123"
+database = "garuda"
+username = "default"
+password = ""
+
+[hard_intel]
+google_safe_browsing_api_key = ""
+abuse_ch_enabled = true
+shadowserver_enabled = true
+spamhaus_enabled = true
+coinblocker_enabled = true
+
+[features]
+# Domain analysis
+check_idn_homoglyphs = true
+check_typosquatting = true
+check_dga = true
+check_nrd = true
+check_dynamic_dns = true
+check_parked_domains = true
+check_cname_cloaking = true
+
+# Performance tuning
+feature_cache_ttl = 300
+intel_cache_ttl = 3600
+max_dns_lookups = 5
+
+[linucb]
+alpha = 1.0
+context_dimensions = 20
+arms = 3  # ALLOW, WARN, BLOCK
+
+[student_model]
+path = "models/student.json"
+feature_count = 50
+
+[logging]
+level = "info"
+format = "json"
